@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI-based Image Classifier App" />
+  <title>Image Classifier</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="min-h-screen flex flex-col justify-center items-center p-4">
+    <h1 class="text-4xl font-bold mb-6 text-blue-700">Image Classifier</h1>
+
+    <form method="POST" enctype="multipart/form-data" class="bg-white shadow-md rounded px-8 pt-6 pb-8 w-full max-w-md">
+      <div class="mb-4">
+        <input type="file" name="file" required class="w-full text-sm text-gray-500 border rounded px-3 py-2" />
+      </div>
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Classify</button>
+    </form>
+
+    {% if prediction %}
+      <div class="mt-6 p-4 bg-green-100 border border-green-300 rounded text-lg">
+        {{ prediction }}
+      </div>
+    {% endif %}
+
+    <footer class="mt-10 text-sm text-gray-500">
+      Made by <a href="https://github.com/Mdbaizidtanvir/" class="text-blue-600 hover:underline" target="_blank">Mdbaizidtanvir</a>
+    </footer>
+  </div>
+</body>
+</html>
